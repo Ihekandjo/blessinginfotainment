@@ -1,0 +1,291 @@
+# ===========================================
+# PowerConnect Monorepo - Comprehensive .gitignore
+# ===========================================
+
+# ===========================================
+# Operating System Files
+# ===========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================================
+# Node.js & Package Managers
+# ===========================================
+# Dependencies
+node_modules/
+jspm_packages/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Package manager files
+package-lock.json
+yarn.lock
+.npm
+.yarn/
+.pnp.*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ===========================================
+# Environment & Configuration
+# ===========================================
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.template
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===========================================
+# Build & Distribution
+# ===========================================
+# General build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.docusaurus/
+
+# Vite specific
+dist-ssr/
+*.local
+
+# ===========================================
+# Logs & Debugging
+# ===========================================
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# ===========================================
+# TypeScript
+# ===========================================
+# TypeScript cache
+*.tsbuildinfo
+
+# ===========================================
+# React Native / Expo
+# ===========================================
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# React Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# ===========================================
+# IDE & Editor Files
+# ===========================================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# Testing
+# ===========================================
+# Jest
+coverage/
+.nyc_output/
+
+# ===========================================
+# Caching
+# ===========================================
+# Turborepo
+.turbo/
+
+# ESLint cache
+.eslintcache
+
+# Stylelint cache
+.stylelintcache
+
+# Parcel cache
+.cache/
+.parcel-cache/
+
+# SvelteKit cache
+.svelte-kit/
+
+# VitePress cache
+**/.vitepress/cache
+
+# ===========================================
+# Database & Storage
+# ===========================================
+# MongoDB
+*.db
+*.sqlite
+*.sqlite3
+
+# ===========================================
+# API Specific
+# ===========================================
+# Uploads and user content
+api/uploads/
+api/public/outage-attachments/
+api/logs/
+
+# Generated files
+api/migration-report-*.json
+api/outage-workflow-test-report.json
+api/ldap-test-output.log
+
+# ===========================================
+# Temporary Files
+# ===========================================
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# ===========================================
+# Security & Keys
+# ===========================================
+# Private keys and certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.mobileprovision
+
+# ===========================================
+# Documentation
+# ===========================================
+# Generated documentation
+docs/build/
+docs/dist/
+
+# ===========================================
+# Miscellaneous
+# ===========================================
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Firebase cache directory
+.firebase/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Vite timestamp files
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# ===========================================
+# Project Specific
+# ===========================================
+# PowerConnect specific files to ignore
+.DS_Store
+api/logs/
+api/uploads/
