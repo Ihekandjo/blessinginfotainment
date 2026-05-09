@@ -2,26 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  @apply antialiased text-gray-800;
-}
+  body {
+    @apply antialiased text-ink-800 font-sans bg-savanna-50;
+    font-feature-settings: 'ss01', 'cv11';
+  }
 
-/* Video background optimizations */
-video {
-  @apply w-full h-full object-cover;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000;
-  will-change: transform;
-}
+  ::selection {
+    @apply bg-sun-300/60 text-ink-900;
+  }
 
-@media (max-width: 768px) {
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-300;
+  }
+
   video {
-    @apply object-cover;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-tight {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .heading-display {
+    @apply font-display tracking-tight;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em];
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl backdrop-saturate-150 border border-white/40;
+  }
+
+  .glass-dark {
+    @apply bg-ink-900/60 backdrop-blur-xl backdrop-saturate-150 border border-white/10;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full
+      bg-sun-400 hover:bg-sun-300 text-ink-900 font-semibold px-7 py-3.5
+      shadow-glow-sun transition-all hover:-translate-y-0.5 active:translate-y-0
+      overflow-hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    @apply pointer-events-none absolute inset-y-0 -left-1/2 w-1/2
+      bg-gradient-to-r from-transparent via-white/60 to-transparent
+      skew-x-[-20deg];
+    transition: transform 0.7s ease;
+    transform: translateX(0);
+  }
+  .btn-primary:hover::after {
+    transform: translateX(400%);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+      px-7 py-3.5 font-semibold text-white border border-white/30
+      bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all
+      hover:-translate-y-0.5;
+  }
+
+  .card-glow {
+    @apply relative bg-white rounded-2xl p-6 shadow-soft border border-ink-100/60
+      transition-all duration-500;
+  }
+
+  .card-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500
+      pointer-events-none;
+    background: radial-gradient(
+      400px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(251, 191, 73, 0.18),
+      transparent 40%
+    );
+  }
+  .card-glow:hover::before {
+    opacity: 1;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sun-300 via-sun-400 to-sun-200
+      bg-[length:200%_100%] animate-gradient-drift;
+  }
+
+  .section-label {
+    @apply text-sun-500 font-semibold tracking-[0.2em] uppercase text-xs;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
