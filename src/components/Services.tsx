@@ -25,26 +25,29 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 36, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.65, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6, transition: { type: 'spring', stiffness: 320, damping: 22 } }}
       onMouseMove={handleMove}
       className={clsx(
-        'card-glow group hover:-translate-y-1 hover:ring-2',
+        'card-glow group ring-2 ring-transparent hover:ring-2',
         accent.ring,
       )}
     >
       <div className="relative">
-        <div
+        <motion.div
+          whileHover={{ rotate: -8, scale: 1.1 }}
+          transition={{ type: 'spring', stiffness: 350, damping: 18 }}
           className={clsx(
-            'inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-transform group-hover:rotate-[-6deg] group-hover:scale-105',
+            'inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5',
             accent.iconBg,
             accent.iconText,
           )}
         >
           <Icon className="w-7 h-7" strokeWidth={1.6} />
-        </div>
+        </motion.div>
 
         <h3 className="heading-display text-2xl font-semibold text-ink-900">
           {service.title}
@@ -52,19 +55,23 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         <p className="mt-3 text-ink-600 leading-relaxed">{service.description}</p>
 
         <ul className="mt-5 flex flex-wrap gap-2">
-          {service.highlights.map((h) => (
-            <li
+          {service.highlights.map((h, hi) => (
+            <motion.li
               key={h}
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.4, delay: index * 0.1 + hi * 0.06 }}
               className="text-xs font-medium text-ink-700 bg-ink-50 border border-ink-100 rounded-full px-3 py-1"
             >
               {h}
-            </li>
+            </motion.li>
           ))}
         </ul>
 
-        <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-ink-900 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+        <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-ink-900 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
           Explore more
-          <ArrowUpRight className="w-4 h-4" />
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </div>
       </div>
     </motion.div>

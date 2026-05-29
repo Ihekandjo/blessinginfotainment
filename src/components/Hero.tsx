@@ -45,7 +45,7 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/logo.png"
+          poster="/brand-poster.svg"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/main.mp4" type="video/mp4" />

@@ -60,10 +60,10 @@ export function Process() {
                   </span>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.7 }}
+                    initial={{ opacity: 0, x: isLeft ? -24 : 24, y: 16 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.75, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                     className={
                       'pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-12 ' +
                       (isLeft ? '' : '')
