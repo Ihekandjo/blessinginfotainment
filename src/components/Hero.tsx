@@ -1,14 +1,15 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowDown } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useScrollTo } from '../hooks/useScrollTo';
-
-const headline = ['Train.', 'Market.', 'Build.', 'Celebrate.'];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollTo = useScrollTo(80);
+  const { t } = useTranslation();
+  const headline = t('hero.words', { returnObjects: true }) as string[];
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -80,7 +81,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-accent opacity-75 animate-ping" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-accent" />
           </span>
-          Namibian-rooted, globally-minded consultancy
+          {t('hero.badge')}
         </motion.div>
 
         <h1 className="mt-8 heading-display font-semibold text-balance leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem]">
@@ -114,8 +115,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-8 text-lg md:text-xl text-ink-100/85 max-w-2xl mx-auto text-balance"
         >
-          Blessing Infotainment partners with bold organisations across Namibia
-          to grow people, brands, events and software — beautifully, and on time.
+          {t('hero.description')}
         </motion.p>
 
         <motion.div
@@ -125,11 +125,11 @@ export function Hero() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button onClick={() => scrollTo('contact')} className="btn-primary">
-            Start a project
+            {t('hero.startProject')}
             <ArrowRight className="w-4 h-4" />
           </button>
           <button onClick={() => scrollTo('work')} className="btn-ghost">
-            See our work
+            {t('hero.seeWork')}
           </button>
         </motion.div>
       </motion.div>
@@ -142,7 +142,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
         aria-label="Scroll to next section"
       >
-        <span className="text-[11px] tracking-[0.2em] uppercase">Scroll</span>
+        <span className="text-[11px] tracking-[0.2em] uppercase">{t('hero.scroll')}</span>
         <motion.span
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}

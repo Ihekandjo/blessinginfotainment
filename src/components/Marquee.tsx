@@ -1,7 +1,9 @@
-import { VALUES } from '../data/site';
+import { useTranslation } from 'react-i18next';
 
 export function Marquee() {
-  const items = [...VALUES, ...VALUES];
+  const { t } = useTranslation();
+  const values = t('values', { returnObjects: true }) as string[];
+  const items = [...values, ...values];
   return (
     <section
       aria-label="Our values"

@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "home": "início",
+    "about": "sobre",
+    "services": "serviços",
+    "work": "trabalho",
+    "process": "processo",
+    "contact": "contato",
+    "letsTalk": "Vamos conversar"
+  },
+  "hero": {
+    "badge": "Consultoria com raízes na Namíbia, visão global",
+    "words": ["Treinar.", "Promover.", "Construir.", "Celebrar."],
+    "description": "A Blessing Infotainment trabalha com organizações ousadas em toda a Namíbia para desenvolver pessoas, marcas, eventos e software — com elegância e dentro do prazo.",
+    "startProject": "Iniciar um projeto",
+    "seeWork": "Ver o nosso trabalho",
+    "scroll": "Rolar"
+  },
+  "about": {
+    "eyebrow": "Sobre nós",
+    "title": "Uma consultoria que",
+    "titleAccent": "caminha com você",
+    "titleEnd": ", não à sua frente.",
+    "description": "A Blessing Infotainment existe para ajudar organizações namibianas a crescer com clareza. Reunimos formação, marketing, eventos e engenharia sob o mesmo teto — para que a sua equipa tenha pensamento integrado, não silos.",
+    "tags": ["Pessoas em primeiro lugar", "Orientado a resultados", "Enraizado localmente"],
+    "quote": "Não nos limitamos a entregar projetos — deixamos as equipas mais fortes do que as encontramos. Esse é o padrão Blessing.",
+    "quoteAttrib": "— Equipa Blessing Infotainment, Oshakati",
+    "stats": {
+      "engagements": "Projetos entregues",
+      "years": "Anos no terreno",
+      "uplift": "Melhoria média do cliente",
+      "capabilities": "Capacidades principais"
+    }
+  },
+  "services": {
+    "eyebrow": "O que fazemos",
+    "title": "Quatro capacidades,",
+    "titleAccent": "uma equipa",
+    "titleEnd": ".",
+    "description": "Seja para qualificar uma equipa, lançar um produto, organizar um evento memorável ou desenvolver software — entregamos o projeto completo, ou integramo-nos no seu.",
+    "exploreMore": "Explorar mais",
+    "items": {
+      "training": {
+        "title": "Formação e Facilitação",
+        "description": "Workshops que envolvem a sua equipa para descobrir, criar e aplicar aprendizagens que ficam muito depois de sairmos da sala.",
+        "highlights": ["Laboratórios de liderança", "Capacitação", "Competências interpessoais"]
+      },
+      "marketing": {
+        "title": "Marketing e Vendas",
+        "description": "Criamos ambientes de marca unificados que convertem visitantes em compradores e clientes em evangelistas.",
+        "highlights": ["Narrativa de marca", "Criação de campanhas", "Capacitação de vendas"]
+      },
+      "events": {
+        "title": "Organização de Eventos",
+        "description": "Eventos distintamente namibianos — de lançamentos íntimos a grandes ativações — produzidos do início ao fim.",
+        "highlights": ["Ativações", "Conferências", "Experiências de marca"]
+      },
+      "software": {
+        "title": "Engenharia de Software",
+        "description": "Plataformas personalizadas, painéis de controlo e websites que agilizam operações e contam a sua história online.",
+        "highlights": ["Plataformas web", "Ferramentas internas", "Automação"]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Trabalho selecionado",
+    "title": "Parceiros reais.",
+    "titleAccent": "Resultados reais.",
+    "description": "Um vislumbre de compromissos recentes em salas de formação, lançamentos de marketing e capacitação comunitária.",
+    "items": {
+      "carel": {
+        "title": "Formação na Carel Auto Repairs",
+        "description": "Sessões de formação práticas que aumentaram a confiança técnica e a produtividade diária no chão de fábrica.",
+        "details": {
+          "client": "Carel Auto Repairs",
+          "duration": "4 dias",
+          "service": "Formação",
+          "outcome": "Melhoria do desempenho dos colaboradores"
+        }
+      },
+      "cubita": {
+        "title": "Marketing para a Cubita Guest House",
+        "description": "Estratégia, conteúdo e mix de canais que transformaram um calendário vazio num aumento de 30% nas reservas.",
+        "details": {
+          "client": "Cubita Guest House",
+          "duration": "5 dias",
+          "service": "Marketing",
+          "outcome": "Reservas +30%"
+        }
+      },
+      "pupkewitz": {
+        "title": "Team Building na Pupkewitz Mega-build",
+        "description": "Um compromisso de três meses concebido para alinhar equipas, melhorar a comunicação e construir confiança em escala.",
+        "details": {
+          "client": "Pupkewitz Mega-build",
+          "duration": "3 meses",
+          "service": "Team Building",
+          "outcome": "Colaboração mais forte"
+        }
+      },
+      "oniipa": {
+        "title": "Capacitação no Conselho Municipal de Oniipa",
+        "description": "Facilitação de capacitação que fortaleceu a governação, o planeamento e a coesão das equipas entre departamentos.",
+        "details": {
+          "client": "Conselho Municipal de Oniipa",
+          "duration": "1 mês",
+          "service": "Capacitação",
+          "outcome": "Colaboração melhorada"
+        }
+      },
+      "oshanalrc": {
+        "title": "Formação para a Oshana LRC 2019",
+        "description": "Formação em liderança e representação que equipou os representantes estudantis com ferramentas para liderar com convicção.",
+        "details": {
+          "client": "Oshana LRC",
+          "duration": "3 dias",
+          "service": "Formação",
+          "outcome": "Liderança LRC mais forte"
+        }
+      },
+      "amta": {
+        "title": "Formação para a AMTA Ongwediva",
+        "description": "Formação específica do setor construída em torno das realidades operacionais e ambições de crescimento da AMTA.",
+        "details": {
+          "client": "AMTA Ongwediva",
+          "duration": "3 dias",
+          "service": "Formação",
+          "outcome": "Melhoria do desempenho"
+        }
+      }
+    },
+    "detailLabels": {
+      "Client": "Cliente",
+      "Duration": "Duração",
+      "Service": "Serviço",
+      "Outcome": "Resultado"
+    }
+  },
+  "process": {
+    "eyebrow": "Como trabalhamos",
+    "title": "Um ritmo simples,",
+    "titleAccent": "resultados repetíveis",
+    "titleEnd": ".",
+    "description": "O nosso ritmo de quatro etapas mantém cada compromisso honesto, transparente e orientado para resultados — desde a primeira conversa até à entrega final.",
+    "step": "Etapa",
+    "steps": {
+      "discover": {
+        "title": "Descobrir",
+        "body": "Primeiro ouvimos. Workshops, entrevistas e auditorias para compreender o problema real por detrás do briefing."
+      },
+      "design": {
+        "title": "Conceber",
+        "body": "Co-criamos uma estratégia e direção criativa que se adapta à Namíbia e à sua realidade de mercado única."
+      },
+      "deliver": {
+        "title": "Entregar",
+        "body": "Executamos — salas de formação, sistemas de marca, lançamentos de software, ativações no terreno."
+      },
+      "develop": {
+        "title": "Desenvolver",
+        "body": "Medimos os resultados e iteramos, deixando equipas mais fortes e capacidades mais duradouras."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Vamos construir",
+    "title": "Fale-nos sobre",
+    "titleAccent": "o trabalho",
+    "titleEnd": ".",
+    "description": "Partilhe alguns detalhes e responderemos dentro de um dia útil. Sem pressão — apenas uma conversa.",
+    "reachUs": "Contacte-nos diretamente",
+    "followUs": "Siga-nos",
+    "form": {
+      "name": "O seu nome",
+      "namePlaceholder": "Jane Shipanga",
+      "email": "O seu e-mail",
+      "emailPlaceholder": "jane@empresa.com",
+      "service": "Serviço",
+      "servicePlaceholder": "Escolha um serviço",
+      "message": "Resumo do projeto",
+      "messagePlaceholder": "Fale-nos um pouco sobre a sua equipa, o seu prazo e o resultado que gostaria de ver…",
+      "send": "Enviar mensagem",
+      "sending": "A enviar…",
+      "sent": "Mensagem enviada",
+      "successMsg": "Obrigado — a sua mensagem foi enviada. Responderemos dentro de um dia útil.",
+      "privacy": "Ao submeter, concorda que poderemos contactá-lo sobre a sua consulta. Sem spam, nunca.",
+      "services": {
+        "training": "Formação e Facilitação",
+        "marketing": "Marketing e Vendas",
+        "events": "Organização de Eventos",
+        "software": "Engenharia de Software"
+      }
+    }
+  },
+  "footer": {
+    "cta": "Pronto para fazer",
+    "ctaAccent": "um trabalho notável",
+    "ctaEnd": "juntos?",
+    "startProject": "Iniciar um projeto",
+    "tagline": "A Blessing Infotainment é uma consultoria namibiana que entrega formação, marketing, eventos e software com dedicação.",
+    "explore": "Explorar",
+    "connect": "Conectar",
+    "copyright": "Blessing Infotainment. Criado na Namíbia.",
+    "backToTop": "Voltar ao topo"
+  },
+  "values": ["Integridade", "Curiosidade", "Excelência", "Parceria", "Alegria", "Qualidade", "Raízes namibianas", "Visão global"],
+  "address": "Caixa Postal 536, Oshakati, Namíbia"
+}

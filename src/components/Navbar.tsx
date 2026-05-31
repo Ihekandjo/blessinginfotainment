@@ -1,8 +1,10 @@
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import { BrandLogo } from './BrandLogo';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { NAV_ITEMS, SOCIALS } from '../data/site';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { useScrollTo } from '../hooks/useScrollTo';
@@ -11,6 +13,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const active = useActiveSection(NAV_ITEMS);
   const scrollTo = useScrollTo(80);
+  const { t } = useTranslation();
 
   const { scrollY } = useScroll();
   const bgOpacity = useTransform(scrollY, [0, 120], [0, 0.92]);
@@ -70,7 +73,7 @@ export function Navbar() {
                           transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                         />
                       )}
-                      <span className="relative">{item}</span>
+                      <span className="relative">{t(`nav.${item}`)}</span>
                     </button>
                   </li>
                 );
@@ -92,11 +95,12 @@ export function Navbar() {
               ))}
             </div>
 
+            <LanguageSwitcher />
             <button
               onClick={() => go('contact')}
               className="rounded-full bg-sun-400 hover:bg-sun-300 text-ink-900 font-semibold text-sm px-5 py-2.5 transition-all hover:-translate-y-0.5 shadow-glow-sun"
             >
-              Let&apos;s talk
+              {t('nav.letsTalk')}
             </button>
           </div>
 
@@ -130,10 +134,13 @@ export function Navbar() {
                         : 'text-white/80 hover:bg-white/5 hover:text-white',
                     )}
                   >
-                    {item}
+                    {t(`nav.${item}`)}
                   </button>
                 ))}
-                <div className="flex items-center gap-4 pt-4 mt-2 border-t border-white/10">
+                <div className="pt-4 mt-2 border-t border-white/10">
+                  <LanguageSwitcher />
+                </div>
+                <div className="flex items-center gap-4 pt-3">
                   {SOCIALS.map(({ Icon, url, label }) => (
                     <a
                       key={label}

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import type { MouseEvent } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { SERVICES, type Service } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 
@@ -12,9 +13,16 @@ const ACCENTS: Record<Service['accent'], { ring: string; iconBg: string; iconTex
   emerald: { ring: 'ring-emerald-accent/50', iconBg: 'bg-emerald-accent/15', iconText: 'text-emerald-accent' },
 };
 
-function ServiceCard({ service, index }: { service: Service; index: number }) {
+const SERVICE_KEYS = ['training', 'marketing', 'events', 'software'] as const;
+
+function ServiceCard({ service, index, tKey }: { service: Service; index: number; tKey: string }) {
   const Icon = service.icon;
   const accent = ACCENTS[service.accent];
+  const { t } = useTranslation();
+
+  const title = t(`services.items.${tKey}.title`);
+  const description = t(`services.items.${tKey}.description`);
+  const highlights = t(`services.items.${tKey}.highlights`, { returnObjects: true }) as string[];
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
@@ -50,12 +58,12 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         </motion.div>
 
         <h3 className="heading-display text-2xl font-semibold text-ink-900">
-          {service.title}
+          {title}
         </h3>
-        <p className="mt-3 text-ink-600 leading-relaxed">{service.description}</p>
+        <p className="mt-3 text-ink-600 leading-relaxed">{description}</p>
 
         <ul className="mt-5 flex flex-wrap gap-2">
-          {service.highlights.map((h, hi) => (
+          {highlights.map((h, hi) => (
             <motion.li
               key={h}
               initial={{ opacity: 0, scale: 0.85 }}
@@ -70,7 +78,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         </ul>
 
         <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-ink-900 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          Explore more
+          {t('services.exploreMore')}
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </div>
       </div>
@@ -79,6 +87,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 }
 
 export function Services() {
+  const { t } = useTranslation();
   return (
     <section
       id="services"
@@ -90,18 +99,18 @@ export function Services() {
       />
       <div className="container-tight relative">
         <SectionHeading
-          eyebrow="What we do"
+          eyebrow={t('services.eyebrow')}
           title={
             <>
-              Four capabilities, <span className="gradient-text">one team</span>.
+              {t('services.title')} <span className="gradient-text">{t('services.titleAccent')}</span>{t('services.titleEnd')}
             </>
           }
-          description="Whether you need to up-skill a workforce, launch a product, throw a memorable event or ship software — we can deliver the whole arc, or slot into yours."
+          description={t('services.description')}
         />
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((s, i) => (
-            <ServiceCard key={s.title} service={s} index={i} />
+            <ServiceCard key={SERVICE_KEYS[i]} service={s} index={i} tKey={SERVICE_KEYS[i]} />
           ))}
         </div>
       </div>

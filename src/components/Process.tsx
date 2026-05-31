@@ -1,10 +1,14 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PROCESS_STEPS } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 
+const STEP_KEYS = ['discover', 'design', 'deliver', 'develop'] as const;
+
 export function Process() {
   const ref = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start 0.8', 'end 0.2'],
@@ -32,14 +36,14 @@ export function Process() {
       <div className="container-tight relative">
         <SectionHeading
           light
-          eyebrow="How we work"
+          eyebrow={t('process.eyebrow')}
           title={
             <>
-              A simple rhythm,{' '}
-              <span className="gradient-text">repeatable results</span>.
+              {t('process.title')}{' '}
+              <span className="gradient-text">{t('process.titleAccent')}</span>{t('process.titleEnd')}
             </>
           }
-          description="Our four-step rhythm keeps every engagement honest, transparent and outcome-driven — from first conversation to final handover."
+          description={t('process.description')}
         />
 
         <div ref={ref} className="relative mt-16 md:mt-20">
@@ -81,13 +85,13 @@ export function Process() {
                       }
                     >
                       <div className="text-sun-300 text-sm font-semibold tracking-[0.2em] uppercase">
-                        Step {String(i + 1).padStart(2, '0')}
+                        {t('process.step')} {String(i + 1).padStart(2, '0')}
                       </div>
                       <h3 className="mt-2 heading-display text-3xl md:text-4xl font-semibold">
-                        {step.title}
+                        {t(`process.steps.${STEP_KEYS[i]}.title`)}
                       </h3>
                       <p className="mt-3 text-ink-100/75 max-w-md md:ml-auto leading-relaxed">
-                        {step.body}
+                        {t(`process.steps.${STEP_KEYS[i]}.body`)}
                       </p>
                     </div>
                   </motion.div>
