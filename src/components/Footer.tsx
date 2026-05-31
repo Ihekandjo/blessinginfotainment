@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { BrandLogo } from './BrandLogo';
 import { NAV_ITEMS, SOCIALS } from '../data/site';
 import { useScrollTo } from '../hooks/useScrollTo';
 
 export function Footer() {
   const scrollTo = useScrollTo(80);
+  const { t } = useTranslation();
 
   return (
     <footer className="relative bg-ink-950 text-ink-100/70 pt-20 pb-10 overflow-hidden">
@@ -27,14 +29,14 @@ export function Footer() {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="heading-display text-4xl md:text-6xl font-semibold text-white text-balance">
-            Ready to do{' '}
-            <span className="gradient-text">remarkable work</span> together?
+            {t('footer.cta')}{' '}
+            <span className="gradient-text">{t('footer.ctaAccent')}</span> {t('footer.ctaEnd')}
           </h2>
           <button
             onClick={() => scrollTo('contact')}
             className="btn-primary mt-8"
           >
-            Start a project
+            {t('footer.startProject')}
           </button>
         </motion.div>
 
@@ -44,14 +46,13 @@ export function Footer() {
               <BrandLogo variant="footer" />
             </div>
             <p className="mt-5 text-sm leading-relaxed max-w-sm">
-              Blessing Infotainment is a Namibian consultancy delivering
-              training, marketing, events and software with heart.
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div>
             <h4 className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Explore
+              {t('footer.explore')}
             </h4>
             <ul className="space-y-2">
               {NAV_ITEMS.map((item) => (
@@ -60,7 +61,7 @@ export function Footer() {
                     onClick={() => scrollTo(item)}
                     className="capitalize text-sm hover:text-sun-300 transition-colors"
                   >
-                    {item}
+                    {t(`nav.${item}`)}
                   </button>
                 </li>
               ))}
@@ -69,7 +70,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-              Connect
+              {t('footer.connect')}
             </h4>
             <div className="flex items-center gap-3">
               {SOCIALS.map(({ Icon, url, label }) => (
@@ -90,14 +91,13 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-white/50">
           <p>
-            &copy; {new Date().getFullYear()} Blessing Infotainment. Crafted in
-            Namibia.
+            &copy; {new Date().getFullYear()} {t('footer.copyright')}
           </p>
           <button
             onClick={() => scrollTo('home')}
             className="inline-flex items-center gap-2 hover:text-sun-300 transition-colors"
           >
-            Back to top
+            {t('footer.backToTop')}
             <ArrowUp className="w-3 h-3" />
           </button>
         </div>

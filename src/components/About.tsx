@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { STATS } from '../data/site';
 import { useCountUp } from '../hooks/useCountUp';
 import { SectionHeading } from './SectionHeading';
@@ -41,13 +42,17 @@ function StatCard({
   );
 }
 
+const STAT_KEYS = ['engagements', 'years', 'uplift', 'capabilities'] as const;
+
 export function About() {
   const ref = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
   const yArt = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+  const tags = t('about.tags', { returnObjects: true }) as string[];
 
   return (
     <section
@@ -65,14 +70,14 @@ export function About() {
           <div className="lg:col-span-5">
             <SectionHeading
               align="left"
-              eyebrow="About us"
+              eyebrow={t('about.eyebrow')}
               title={
                 <>
-                  A consultancy that <span className="text-sun-500">moves with you</span>,
-                  not at you.
+                  {t('about.title')} <span className="text-sun-500">{t('about.titleAccent')}</span>
+                  {t('about.titleEnd')}
                 </>
               }
-              description="Blessing Infotainment exists to help Namibian organisations grow with clarity. We bring together training, marketing, events and engineering under one roof — so your team gets joined-up thinking, not silos."
+              description={t('about.description')}
             />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +86,7 @@ export function About() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              {['People-first', 'Outcome-driven', 'Locally rooted'].map((tag) => (
+              {tags.map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex items-center gap-2 rounded-full bg-ink-900 text-white/90 px-4 py-2 text-xs font-medium"
@@ -97,7 +102,13 @@ export function About() {
             <motion.div style={{ y: yArt }} className="relative">
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {STATS.map((s, i) => (
-                  <StatCard key={s.label} {...s} index={i} />
+                  <StatCard
+                    key={STAT_KEYS[i]}
+                    value={s.value}
+                    suffix={s.suffix}
+                    label={t(`about.stats.${STAT_KEYS[i]}`)}
+                    index={i}
+                  />
                 ))}
               </div>
 
@@ -114,11 +125,10 @@ export function About() {
                   className="absolute -bottom-16 -right-16 w-56 h-56 rounded-full bg-sun-400/40 blur-3xl"
                 />
                 <p className="relative text-lg md:text-xl heading-display leading-snug text-balance">
-                  &ldquo;We don&apos;t just deliver projects — we leave teams stronger
-                  than we found them. That&apos;s the Blessing standard.&rdquo;
+                  &ldquo;{t('about.quote')}&rdquo;
                 </p>
                 <p className="relative mt-4 text-sm text-white/60">
-                  — Blessing Infotainment team, Oshakati
+                  {t('about.quoteAttrib')}
                 </p>
               </motion.div>
             </motion.div>

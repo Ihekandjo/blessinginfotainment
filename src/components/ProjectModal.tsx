@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { PortfolioItem } from '../data/site';
 
 type Props = {
@@ -19,6 +20,7 @@ const detailVariants = {
 };
 
 export function ProjectModal({ project, onClose }: Props) {
+  const { t } = useTranslation();
   useEffect(() => {
     if (!project) return;
     const onKey = (e: KeyboardEvent) => {
@@ -109,7 +111,7 @@ export function ProjectModal({ project, onClose }: Props) {
                     className="rounded-xl border border-ink-100 bg-savanna-50/60 p-4"
                   >
                     <div className="text-[11px] font-semibold tracking-[0.2em] uppercase text-sun-600">
-                      {d.label}
+                      {t(`portfolio.detailLabels.${d.label}`, d.label)}
                     </div>
                     <div className="mt-1 text-ink-900 font-semibold">
                       {d.value}

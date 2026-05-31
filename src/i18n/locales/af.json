@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "home": "tuis",
+    "about": "oor ons",
+    "services": "dienste",
+    "work": "werk",
+    "process": "proses",
+    "contact": "kontak",
+    "letsTalk": "Kom ons gesels"
+  },
+  "hero": {
+    "badge": "Namibia-gegrond, wêreldgeoriënteerde konsultasie",
+    "words": ["Oplei.", "Bemark.", "Bou.", "Vier."],
+    "description": "Blessing Infotainment werk saam met gedurfde organisasies regoor Namibia om mense, handelsmerke, geleenthede en sagteware te laat groei — mooi, en betyds.",
+    "startProject": "Begin 'n projek",
+    "seeWork": "Sien ons werk",
+    "scroll": "Blaai"
+  },
+  "about": {
+    "eyebrow": "Oor ons",
+    "title": "'n Konsultasie wat",
+    "titleAccent": "saam met jou beweeg",
+    "titleEnd": ", nie teen jou nie.",
+    "description": "Blessing Infotainment help Namibiese organisasies om met duidelikheid te groei. Ons bring opleiding, bemarking, geleenthede en ingenieurswese onder een dak saam — sodat jou span geïntegreerde denke kry, nie silo's nie.",
+    "tags": ["Mense-eerste", "Uitkomsgerigte", "Plaaslik gewortel"],
+    "quote": "Ons lewer nie net projekte nie — ons laat spanne sterker agter as wat ons hulle gevind het. Dit is die Blessing standaard.",
+    "quoteAttrib": "— Blessing Infotainment-span, Oshakati",
+    "stats": {
+      "engagements": "Opdragte gelewer",
+      "years": "Jare op die grond",
+      "uplift": "Gem. kliënte verbetering",
+      "capabilities": "Kernvermoëns"
+    }
+  },
+  "services": {
+    "eyebrow": "Wat ons doen",
+    "title": "Vier vermoëns,",
+    "titleAccent": "een span",
+    "titleEnd": ".",
+    "description": "Of jy 'n arbeidsmag wil opwaarder, 'n produk wil bekendstaan, 'n gedenkwaardige geleentheid wil aanbied of sagteware wil verskaf — ons kan die hele proses lewer, of in jou inpas.",
+    "exploreMore": "Verken meer",
+    "items": {
+      "training": {
+        "title": "Opleiding & Fasilitering",
+        "description": "Werkswinkels wat jou span betrek om leer wat lank bly te ontdek, skep en toe te pas.",
+        "highlights": ["Leierskapslaboratoriums", "Kapasiteitsbou", "Sagte vaardighede"]
+      },
+      "marketing": {
+        "title": "Bemarking & Verkope",
+        "description": "Ons skep verenigde handelsmerkomgewings wat besoekers in kopers en kliënte in evangeliste omskep.",
+        "highlights": ["Handelsmerkstorievertelling", "Veldtogontwerp", "Verkoopsbemagtiging"]
+      },
+      "events": {
+        "title": "Geleentheidsorganisering",
+        "description": "Uniek Namibiese geleenthede — van intieme bekendstellings tot groot aktiveerings — van begin tot einde geproduseer.",
+        "highlights": ["Aktiveerings", "Konferensies", "Handelsmerkbelewenisse"]
+      },
+      "software": {
+        "title": "Sagteware-ingenieurswese",
+        "description": "Pasgemaakte platforms, instroomboorde en webwerwe wat bedrywighede stroomlyn en jou storie aanlyn vertel.",
+        "highlights": ["Webplatforms", "Interne gereedskap", "Outomatisering"]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Geselekteerde werk",
+    "title": "Regte vennote.",
+    "titleAccent": "Regte uitkomste.",
+    "description": "''n Kykie na onlangse opdragte oor opleidingslokale, bemarkingsbekendstellings en gemeenskaplike kapasiteitsbou.",
+    "items": {
+      "carel": {
+        "title": "Opleiding by Carel Motorherstelwerk",
+        "description": "Praktiese opleidingsessies wat tegniese selfvertroue en daaglikse produktiwiteit op die werksvloer verhoog het.",
+        "details": {
+          "client": "Carel Motorherstelwerk",
+          "duration": "4 dae",
+          "service": "Opleiding",
+          "outcome": "Verbeterde werknemerswerkverrigting"
+        }
+      },
+      "cubita": {
+        "title": "Bemarking vir Cubita Gastehuis",
+        "description": "Strategie, inhoud en kanaalsamestelling wat 'n stil kalender in 'n 30% besprekingstoename omskep het.",
+        "details": {
+          "client": "Cubita Gastehuis",
+          "duration": "5 dae",
+          "service": "Bemarking",
+          "outcome": "Besprekings +30%"
+        }
+      },
+      "pupkewitz": {
+        "title": "Spanbou by Pupkewitz Mega-bou",
+        "description": "'n Drie-maand-opdrag wat ontwerp is om spanne te belyn, kommunikasie te skerp en vertroue op skaal te bou.",
+        "details": {
+          "client": "Pupkewitz Mega-bou",
+          "duration": "3 maande",
+          "service": "Spanbou",
+          "outcome": "Sterker samewerking"
+        }
+      },
+      "oniipa": {
+        "title": "Kapasiteitsbou by Oniipa Stadsraad",
+        "description": "Kapasiteitsbou-fasilitering wat bestuur, beplanning en spansamehorigheid oor departemente heen versterk het.",
+        "details": {
+          "client": "Oniipa Stadsraad",
+          "duration": "1 maand",
+          "service": "Kapasiteitsbou",
+          "outcome": "Verbeterde samewerking"
+        }
+      },
+      "oshanalrc": {
+        "title": "Opleiding vir Oshana LRC 2019",
+        "description": "Leierskap- en verteenwoordigingsopleiding wat leerlingraadslede toerus met die gereedskap om met oortuiging te lei.",
+        "details": {
+          "client": "Oshana LRC",
+          "duration": "3 dae",
+          "service": "Opleiding",
+          "outcome": "Sterker LRC-leierskap"
+        }
+      },
+      "amta": {
+        "title": "Opleiding vir AMTA Ongwediva",
+        "description": "Sektorspesifieke opleiding gebou rondom AMTA se bedryfswerklikhede en groeiambisies.",
+        "details": {
+          "client": "AMTA Ongwediva",
+          "duration": "3 dae",
+          "service": "Opleiding",
+          "outcome": "Verbeterde werkverrigting"
+        }
+      }
+    },
+    "detailLabels": {
+      "Client": "Kliënt",
+      "Duration": "Tydsduur",
+      "Service": "Diens",
+      "Outcome": "Uitkoms"
+    }
+  },
+  "process": {
+    "eyebrow": "Hoe ons werk",
+    "title": "'n Eenvoudige ritme,",
+    "titleAccent": "herhaalbare resultate",
+    "titleEnd": ".",
+    "description": "Ons vier-stap-ritme hou elke opdrag eerlik, deursigtig en uitkomsgerigte — van die eerste gesprek tot die finale oordrag.",
+    "step": "Stap",
+    "steps": {
+      "discover": {
+        "title": "Ontdek",
+        "body": "Ons luister eerste. Werkswinkels, onderhoude en oudits om die werklike probleem agter die opdrag te verstaan."
+      },
+      "design": {
+        "title": "Ontwerp",
+        "body": "Ons skep saam 'n strategie en kreatiewe rigting wat Namibia en jou unieke markwerklikheid pas."
+      },
+      "deliver": {
+        "title": "Lewer",
+        "body": "Ons voer uit — opleidingslokale, handelsmerkstelsels, sagteware-vrystelling, aktiveerings op die grond."
+      },
+      "develop": {
+        "title": "Ontwikkel",
+        "body": "Ons meet uitkomste en herhaal, en laat spanne sterker en vermoëns meer duursaam agter."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Kom ons bou",
+    "title": "Vertel ons van",
+    "titleAccent": "die werk",
+    "titleEnd": ".",
+    "description": "Deel 'n paar besonderhede en ons sal binne een werkdag terugkom. Geen druk nie — net 'n gesprek.",
+    "reachUs": "Bereik ons direk",
+    "followUs": "Volg ons",
+    "form": {
+      "name": "Jou naam",
+      "namePlaceholder": "Jane Shipanga",
+      "email": "Jou e-pos",
+      "emailPlaceholder": "jane@maatskappy.com",
+      "service": "Diens",
+      "servicePlaceholder": "Kies 'n diens",
+      "message": "Projekopsomming",
+      "messagePlaceholder": "Vertel ons bietjie van jou span, jou tydlyn en die uitkoms wat jy graag wil sien…",
+      "send": "Stuur boodskap",
+      "sending": "Stuur…",
+      "sent": "Boodskap gestuur",
+      "successMsg": "Dankie — jou boodskap is gestuur. Ons sal binne een werkdag antwoord.",
+      "privacy": "Deur in te dien stem jy in dat ons jou oor jou navraag mag kontak. Geen strooipos nie, ooit.",
+      "services": {
+        "training": "Opleiding & Fasilitering",
+        "marketing": "Bemarking & Verkope",
+        "events": "Geleentheidsorganisering",
+        "software": "Sagteware-ingenieurswese"
+      }
+    }
+  },
+  "footer": {
+    "cta": "Gereed om",
+    "ctaAccent": "merkwaardige werk",
+    "ctaEnd": "saam te doen?",
+    "startProject": "Begin 'n projek",
+    "tagline": "Blessing Infotainment is 'n Namibiese konsultasie wat opleiding, bemarking, geleenthede en sagteware met hart lewer.",
+    "explore": "Verken",
+    "connect": "Verbind",
+    "copyright": "Blessing Infotainment. Geskep in Namibia.",
+    "backToTop": "Terug na bo"
+  },
+  "values": ["Integriteit", "Nuuskierigheid", "Vakmanskap", "Vennootskap", "Vreugde", "Uitnemendheid", "Namibia-gegrond", "Wêreldgeoriënteerd"],
+  "address": "Posbus 536, Oshakati, Namibia"
+}

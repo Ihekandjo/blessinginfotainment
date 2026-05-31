@@ -1,24 +1,32 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PORTFOLIO, type PortfolioItem } from '../data/site';
 import { SectionHeading } from './SectionHeading';
+
+const PORTFOLIO_KEYS = ['carel', 'cubita', 'pupkewitz', 'oniipa', 'oshanalrc', 'amta'] as const;
 
 function PortfolioCard({
   item,
   index,
+  tKey,
   onSelect,
 }: {
   item: PortfolioItem;
   index: number;
+  tKey: string;
   onSelect: (item: PortfolioItem) => void;
 }) {
   const ref = useRef<HTMLButtonElement>(null);
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
   const yImage = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+  const title = t(`portfolio.items.${tKey}.title`);
+  const description = t(`portfolio.items.${tKey}.description`);
 
   return (
     <motion.button
@@ -54,10 +62,10 @@ function PortfolioCard({
 
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
         <h3 className="heading-display text-xl md:text-2xl font-semibold leading-tight">
-          {item.title}
+          {title}
         </h3>
         <p className="mt-2 text-sm text-white/75 line-clamp-2">
-          {item.description}
+          {description}
         </p>
       </div>
     </motion.button>
@@ -69,6 +77,7 @@ type Props = {
 };
 
 export function Portfolio({ onSelect }: Props) {
+  const { t } = useTranslation();
   return (
     <section
       id="work"
@@ -86,21 +95,22 @@ export function Portfolio({ onSelect }: Props) {
       <div className="container-tight relative">
         <SectionHeading
           light
-          eyebrow="Selected work"
+          eyebrow={t('portfolio.eyebrow')}
           title={
             <>
-              Real partners. <span className="gradient-text">Real outcomes.</span>
+              {t('portfolio.title')} <span className="gradient-text">{t('portfolio.titleAccent')}</span>
             </>
           }
-          description="A glimpse of recent engagements across training rooms, marketing rollouts and community capacity-building."
+          description={t('portfolio.description')}
         />
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PORTFOLIO.map((item, i) => (
             <PortfolioCard
-              key={item.title}
+              key={PORTFOLIO_KEYS[i]}
               item={item}
               index={i}
+              tKey={PORTFOLIO_KEYS[i]}
               onSelect={onSelect}
             />
           ))}

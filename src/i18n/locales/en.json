@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "services": "services",
+    "work": "work",
+    "process": "process",
+    "contact": "contact",
+    "letsTalk": "Let's talk"
+  },
+  "hero": {
+    "badge": "Namibian-rooted, globally-minded consultancy",
+    "words": ["Train.", "Market.", "Build.", "Celebrate."],
+    "description": "Blessing Infotainment partners with bold organisations across Namibia to grow people, brands, events and software — beautifully, and on time.",
+    "startProject": "Start a project",
+    "seeWork": "See our work",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A consultancy that",
+    "titleAccent": "moves with you",
+    "titleEnd": ", not at you.",
+    "description": "Blessing Infotainment exists to help Namibian organisations grow with clarity. We bring together training, marketing, events and engineering under one roof — so your team gets joined-up thinking, not silos.",
+    "tags": ["People-first", "Outcome-driven", "Locally rooted"],
+    "quote": "We don't just deliver projects — we leave teams stronger than we found them. That's the Blessing standard.",
+    "quoteAttrib": "— Blessing Infotainment team, Oshakati",
+    "stats": {
+      "engagements": "Engagements delivered",
+      "years": "Years on the ground",
+      "uplift": "Avg. client uplift",
+      "capabilities": "Core capabilities"
+    }
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Four capabilities,",
+    "titleAccent": "one team",
+    "titleEnd": ".",
+    "description": "Whether you need to up-skill a workforce, launch a product, throw a memorable event or ship software — we can deliver the whole arc, or slot into yours.",
+    "exploreMore": "Explore more",
+    "items": {
+      "training": {
+        "title": "Training & Facilitation",
+        "description": "Workshops that engage your team to discover, create, and apply learning that sticks long after we leave the room.",
+        "highlights": ["Leadership labs", "Capacity building", "Soft-skills sprints"]
+      },
+      "marketing": {
+        "title": "Marketing & Sales",
+        "description": "We craft unified brand environments that convert browsers into buyers and customers into evangelists.",
+        "highlights": ["Brand storytelling", "Campaign design", "Sales enablement"]
+      },
+      "events": {
+        "title": "Event Organising",
+        "description": "Distinctly Namibian events — from intimate launches to large activations — produced end to end.",
+        "highlights": ["Activations", "Conferences", "Brand experiences"]
+      },
+      "software": {
+        "title": "Software Engineering",
+        "description": "Custom platforms, dashboards and websites that streamline operations and tell your story online.",
+        "highlights": ["Web platforms", "Internal tools", "Automation"]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Selected work",
+    "title": "Real partners.",
+    "titleAccent": "Real outcomes.",
+    "description": "A glimpse of recent engagements across training rooms, marketing rollouts and community capacity-building.",
+    "items": {
+      "carel": {
+        "title": "Training at Carel Auto Repairs",
+        "description": "Hands-on training sessions that lifted technical confidence and day-to-day productivity on the shop floor.",
+        "details": {
+          "client": "Carel Auto Repairs",
+          "duration": "4 days",
+          "service": "Training",
+          "outcome": "Improved employee performance"
+        }
+      },
+      "cubita": {
+        "title": "Marketing for Cubita Guest House",
+        "description": "Strategy, content and channel mix that turned a quiet calendar into a 30% bookings lift.",
+        "details": {
+          "client": "Cubita Guest House",
+          "duration": "5 days",
+          "service": "Marketing",
+          "outcome": "Bookings +30%"
+        }
+      },
+      "pupkewitz": {
+        "title": "Team Building at Pupkewitz Mega-build",
+        "description": "A three-month engagement designed to align teams, sharpen communication and build trust at scale.",
+        "details": {
+          "client": "Pupkewitz Mega-build",
+          "duration": "3 months",
+          "service": "Team Building",
+          "outcome": "Stronger collaboration"
+        }
+      },
+      "oniipa": {
+        "title": "Capacity Building at Oniipa Town Council",
+        "description": "Capacity-building facilitation strengthening governance, planning and team cohesion across departments.",
+        "details": {
+          "client": "Oniipa Town Council",
+          "duration": "1 month",
+          "service": "Capacity Building",
+          "outcome": "Enhanced collaboration"
+        }
+      },
+      "oshanalrc": {
+        "title": "Training for Oshana LRC 2019",
+        "description": "Leadership and representation training equipping learner reps with the tools to lead with conviction.",
+        "details": {
+          "client": "Oshana LRC",
+          "duration": "3 days",
+          "service": "Training",
+          "outcome": "Stronger LRC leadership"
+        }
+      },
+      "amta": {
+        "title": "Training for AMTA Ongwediva",
+        "description": "Sector-specific training built around AMTA's operational realities and growth ambitions.",
+        "details": {
+          "client": "AMTA Ongwediva",
+          "duration": "3 days",
+          "service": "Training",
+          "outcome": "Improved performance"
+        }
+      }
+    },
+    "detailLabels": {
+      "Client": "Client",
+      "Duration": "Duration",
+      "Service": "Service",
+      "Outcome": "Outcome"
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A simple rhythm,",
+    "titleAccent": "repeatable results",
+    "titleEnd": ".",
+    "description": "Our four-step rhythm keeps every engagement honest, transparent and outcome-driven — from first conversation to final handover.",
+    "step": "Step",
+    "steps": {
+      "discover": {
+        "title": "Discover",
+        "body": "We listen first. Workshops, interviews and audits to understand the real problem behind the brief."
+      },
+      "design": {
+        "title": "Design",
+        "body": "We co-create a strategy and creative direction that fits Namibia and your unique market reality."
+      },
+      "deliver": {
+        "title": "Deliver",
+        "body": "We execute — training rooms, brand systems, software releases, on-the-ground activations."
+      },
+      "develop": {
+        "title": "Develop",
+        "body": "We measure outcomes and iterate, leaving teams stronger and capabilities more durable."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Let's build",
+    "title": "Tell us about",
+    "titleAccent": "the work",
+    "titleEnd": ".",
+    "description": "Share a few details and we'll come back within one working day. No pressure — just a conversation.",
+    "reachUs": "Reach us directly",
+    "followUs": "Follow us",
+    "form": {
+      "name": "Your name",
+      "namePlaceholder": "Jane Shipanga",
+      "email": "Your email",
+      "emailPlaceholder": "jane@company.com",
+      "service": "Service",
+      "servicePlaceholder": "Pick a service",
+      "message": "Project brief",
+      "messagePlaceholder": "Tell us a bit about your team, your timeline and the outcome you'd love to see…",
+      "send": "Send message",
+      "sending": "Sending…",
+      "sent": "Message sent",
+      "successMsg": "Thanks — your message was sent. We'll reply within one working day.",
+      "privacy": "By submitting you agree we may contact you about your enquiry. No spam, ever.",
+      "services": {
+        "training": "Training & Facilitation",
+        "marketing": "Marketing & Sales",
+        "events": "Event Organising",
+        "software": "Software Engineering"
+      }
+    }
+  },
+  "footer": {
+    "cta": "Ready to do",
+    "ctaAccent": "remarkable work",
+    "ctaEnd": "together?",
+    "startProject": "Start a project",
+    "tagline": "Blessing Infotainment is a Namibian consultancy delivering training, marketing, events and software with heart.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "copyright": "Blessing Infotainment. Crafted in Namibia.",
+    "backToTop": "Back to top"
+  },
+  "values": ["Integrity", "Curiosity", "Craft", "Partnership", "Joy", "Excellence", "Namibian-rooted", "Globally-minded"],
+  "address": "P.O Box 536, Oshakati, Namibia"
+}

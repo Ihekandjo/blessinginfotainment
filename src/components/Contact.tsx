@@ -1,21 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SOCIALS } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 
-const FIELDS = [
-  { key: 'name', label: 'Your name', type: 'text', placeholder: 'Jane Shipanga' },
-  { key: 'email', label: 'Your email', type: 'email', placeholder: 'jane@company.com' },
-] as const;
-
-const SERVICES_OPTIONS = [
-  { value: '', label: 'Pick a service' },
-  { value: 'training', label: 'Training & Facilitation' },
-  { value: 'marketing', label: 'Marketing & Sales' },
-  { value: 'events', label: 'Event Organising' },
-  { value: 'software', label: 'Software Engineering' },
-];
+const FIELD_KEYS = ['name', 'email'] as const;
+const SERVICE_VALUES = ['training', 'marketing', 'events', 'software'] as const;
 
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
@@ -24,6 +15,17 @@ type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 export function Contact() {
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const { t } = useTranslation();
+
+  const FIELDS = [
+    { key: 'name' as const, label: t('contact.form.name'), type: 'text', placeholder: t('contact.form.namePlaceholder') },
+    { key: 'email' as const, label: t('contact.form.email'), type: 'email', placeholder: t('contact.form.emailPlaceholder') },
+  ];
+
+  const SERVICES_OPTIONS = [
+    { value: '', label: t('contact.form.servicePlaceholder') },
+    ...SERVICE_VALUES.map((v) => ({ value: v, label: t(`contact.form.services.${v}`) })),
+  ];
 
   const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
   const contactEmail = import.meta.env.VITE_CONTACT_EMAIL?.trim() ?? 'info@blessinginfotainment.com';
@@ -113,13 +115,13 @@ export function Contact() {
 
       <div className="container-tight relative">
         <SectionHeading
-          eyebrow="Let's build"
+          eyebrow={t('contact.eyebrow')}
           title={
             <>
-              Tell us about <span className="gradient-text">the work</span>.
+              {t('contact.title')} <span className="gradient-text">{t('contact.titleAccent')}</span>{t('contact.titleEnd')}
             </>
           }
-          description="Share a few details and we'll come back within one working day. No pressure — just a conversation."
+          description={t('contact.description')}
         />
 
         <div className="mt-14 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
@@ -139,7 +141,7 @@ export function Contact() {
 
               <div className="relative space-y-6">
                 <h3 className="heading-display text-2xl font-semibold">
-                  Reach us directly
+                  {t('contact.reachUs')}
                 </h3>
 
                 <ul className="space-y-4 text-sm">
@@ -168,13 +170,13 @@ export function Contact() {
                     <span className="mt-0.5 flex items-center justify-center w-9 h-9 rounded-full bg-white/10">
                       <MapPin className="w-4 h-4 text-sun-300" />
                     </span>
-                    <span>P.O Box 536, Oshakati, Namibia</span>
+                    <span>{t('address')}</span>
                   </li>
                 </ul>
 
                 <div className="pt-6 border-t border-white/10">
                   <p className="text-xs uppercase tracking-[0.2em] text-white/60">
-                    Follow us
+                    {t('contact.followUs')}
                   </p>
                   <div className="mt-3 flex items-center gap-3">
                     {SOCIALS.map(({ Icon, url, label }) => (
@@ -230,7 +232,7 @@ export function Contact() {
                 htmlFor="contact-service"
                 className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2"
               >
-                Service
+                {t('contact.form.service')}
               </label>
               <select
                 id="contact-service"
@@ -253,7 +255,7 @@ export function Contact() {
                 htmlFor="contact-message"
                 className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2"
               >
-                Project brief
+                {t('contact.form.message')}
               </label>
               <textarea
                 id="contact-message"
@@ -261,7 +263,7 @@ export function Contact() {
                 required
                 rows={5}
                 disabled={busy}
-                placeholder="Tell us a bit about your team, your timeline and the outcome you'd love to see…"
+                placeholder={t('contact.form.messagePlaceholder')}
                 className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all resize-none disabled:opacity-60"
               />
             </div>
@@ -280,7 +282,7 @@ export function Contact() {
                 role="status"
                 className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3"
               >
-                Thanks — your message was sent. We&apos;ll reply within one working day.
+                {t('contact.form.successMsg')}
               </p>
             )}
 
@@ -290,16 +292,15 @@ export function Contact() {
               className="btn-primary w-full sm:w-auto disabled:opacity-60 disabled:pointer-events-none"
             >
               {busy
-                ? 'Sending…'
+                ? t('contact.form.sending')
                 : showSuccess
-                  ? 'Message sent'
-                  : 'Send message'}
+                  ? t('contact.form.sent')
+                  : t('contact.form.send')}
               <ArrowRight className="w-4 h-4" />
             </button>
 
             <p className="text-xs text-ink-500">
-              By submitting you agree we may contact you about your enquiry. No
-              spam, ever.
+              {t('contact.form.privacy')}
             </p>
           </motion.form>
         </div>
