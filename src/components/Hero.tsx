@@ -45,12 +45,12 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/logo.png"
+          poster="/brand-poster.svg"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/main.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-ink-900/55 to-ink-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/65 via-ink-900/60 to-ink-950/95" />
         <div className="absolute inset-0 bg-grid-faint bg-[size:40px_40px] opacity-[0.18]" />
         <div className="absolute inset-0 bg-radial-glow" />
       </motion.div>

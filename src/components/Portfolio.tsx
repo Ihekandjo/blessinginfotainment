@@ -28,17 +28,20 @@ function PortfolioCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.7, delay: (index % 3) * 0.08 }}
-      className="group relative text-left rounded-2xl overflow-hidden bg-ink-900 ring-1 ring-white/10 hover:ring-sun-300/60 transition-all"
+      className="group relative text-left rounded-2xl overflow-hidden bg-ink-900 ring-1 ring-white/10 hover:ring-sun-400/70 hover:shadow-glow-sun transition-all duration-300"
     >
       <div className="relative h-72 md:h-80 overflow-hidden">
         <motion.img
           src={item.image}
           alt={item.title}
           loading="lazy"
+          decoding="async"
           style={{ y: yImage }}
-          className="absolute inset-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 brightness-90 contrast-105 saturate-[1.15]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/40 to-transparent" />
+        {/* warm brand tint */}
+        <div className="absolute inset-0 bg-sun-400/10 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/50 to-ink-900/10" />
 
         <span className="absolute top-4 left-4 inline-flex items-center gap-2 text-[11px] font-semibold tracking-wider uppercase rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 text-white">
           {item.tag}
@@ -69,11 +72,15 @@ export function Portfolio({ onSelect }: Props) {
   return (
     <section
       id="work"
-      className="relative py-24 md:py-32 bg-ink-900 text-white overflow-hidden"
+      className="relative py-24 md:py-32 bg-ink-950 text-white overflow-hidden"
     >
       <div
         aria-hidden
-        className="absolute -top-32 right-0 w-[28rem] h-[28rem] rounded-full bg-sun-400/15 blur-3xl"
+        className="absolute -top-32 right-0 w-[28rem] h-[28rem] rounded-full bg-sun-400/20 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-0 left-0 w-[20rem] h-[20rem] rounded-full bg-ink-500/30 blur-3xl"
       />
 
       <div className="container-tight relative">

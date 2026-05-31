@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { BrandLogo } from './BrandLogo';
 import { NAV_ITEMS, SOCIALS } from '../data/site';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { useScrollTo } from '../hooks/useScrollTo';
@@ -37,20 +38,14 @@ export function Navbar() {
       className="fixed inset-x-0 top-0 z-50 border-b"
     >
       <div className="container-tight">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between min-h-[5rem] py-3 gap-4">
           <button
             onClick={() => go('home')}
-            className="flex items-center gap-3 group"
-            aria-label="Go to top"
+            className="group relative shrink-0 rounded-xl px-1 py-1 -mx-1 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun-400/80"
+            aria-label="Blessing Infotainment — go to top"
           >
-            <span className="relative">
-              <span className="absolute -inset-2 rounded-full bg-sun-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <img
-                src="/logo.png"
-                alt="Blessing Infotainment"
-                className="h-11 w-auto relative drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
-              />
-            </span>
+            <span className="pointer-events-none absolute -inset-3 rounded-2xl bg-sun-400/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+            <BrandLogo variant="navbar" className="relative drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]" />
           </button>
 
           <div className="hidden md:flex items-center gap-10">
@@ -71,7 +66,7 @@ export function Navbar() {
                       {isActive && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 rounded-full bg-white/10 border border-white/15"
+                          className="absolute inset-0 rounded-full bg-sun-400/20 border border-sun-300/30"
                           transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                         />
                       )}

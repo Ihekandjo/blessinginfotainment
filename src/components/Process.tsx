@@ -24,6 +24,10 @@ export function Process() {
         aria-hidden
         className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-ink-500/40 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="absolute bottom-1/4 -right-32 w-[24rem] h-[24rem] rounded-full bg-sun-400/10 blur-3xl"
+      />
 
       <div className="container-tight relative">
         <SectionHeading
@@ -60,10 +64,10 @@ export function Process() {
                   </span>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.7 }}
+                    initial={{ opacity: 0, x: isLeft ? -24 : 24, y: 16 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.75, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                     className={
                       'pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-12 ' +
                       (isLeft ? '' : '')

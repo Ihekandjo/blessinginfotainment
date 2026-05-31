@@ -17,20 +17,90 @@ const SERVICES_OPTIONS = [
   { value: 'software', label: 'Software Engineering' },
 ];
 
-export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
+
+export function Contact() {
+  const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL?.trim() ?? 'info@blessinginfotainment.com';
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    (e.target as HTMLFormElement).reset();
+    setErrorMessage(null);
+
+    const form = e.currentTarget;
+
+    if (!accessKey) {
+      setStatus('error');
+      setErrorMessage(
+        'This form is not configured yet. Email blessinginfotainment@gmail.com directly, or ask your developer to add VITE_WEB3FORMS_ACCESS_KEY.',
+      );
+      return;
+    }
+
+    const fd = new FormData(form);
+    const name = String(fd.get('name') ?? '').trim();
+    const email = String(fd.get('email') ?? '').trim();
+    const serviceVal = String(fd.get('service') ?? '').trim();
+    const message = String(fd.get('message') ?? '').trim();
+
+    const serviceLabel =
+      SERVICES_OPTIONS.find((o) => o.value === serviceVal)?.label ?? serviceVal;
+
+    setStatus('loading');
+
+    try {
+      const res = await fetch(WEB3FORMS_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          to: contactEmail,
+          from_name: 'Blessing Infotainment Website',
+          replyto: email,
+          subject: `New project enquiry — ${serviceLabel} (${name})`,
+          name,
+          email,
+          message: [
+            `Service: ${serviceLabel}`,
+            '',
+            'Project brief:',
+            message,
+            '',
+            `Submitted from blessinginfotainment.com — reply to ${email}`,
+          ].join('\n'),
+        }),
+      });
+
+      const data = (await res.json()) as { success?: boolean; message?: string };
+
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || 'Something went wrong. Please try again.');
+      }
+
+      form.reset();
+      setStatus('success');
+      window.setTimeout(() => setStatus('idle'), 8000);
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Send failed. Please try again.');
+    }
   };
+
+  const busy = status === 'loading';
+  const showSuccess = status === 'success';
 
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 bg-savanna-50 overflow-hidden"
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
       <div
         aria-hidden
@@ -132,29 +202,43 @@ export function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-7 rounded-3xl bg-white border border-ink-100 shadow-soft p-7 md:p-9 space-y-5"
+            aria-busy={busy}
           >
             {FIELDS.map((f) => (
               <div key={f.key}>
-                <label className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2">
+                <label
+                  htmlFor={`contact-${f.key}`}
+                  className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2"
+                >
                   {f.label}
                 </label>
                 <input
+                  id={`contact-${f.key}`}
+                  name={f.key}
                   type={f.type}
                   required
+                  disabled={busy}
+                  autoComplete={f.key === 'email' ? 'email' : 'name'}
                   placeholder={f.placeholder}
-                  className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all disabled:opacity-60"
                 />
               </div>
             ))}
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2">
+              <label
+                htmlFor="contact-service"
+                className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2"
+              >
                 Service
               </label>
               <select
+                id="contact-service"
+                name="service"
                 required
                 defaultValue=""
-                className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all"
+                disabled={busy}
+                className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all disabled:opacity-60"
               >
                 {SERVICES_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
@@ -165,19 +249,51 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2">
+              <label
+                htmlFor="contact-message"
+                className="block text-xs font-semibold uppercase tracking-[0.2em] text-ink-500 mb-2"
+              >
                 Project brief
               </label>
               <textarea
+                id="contact-message"
+                name="message"
                 required
                 rows={5}
+                disabled={busy}
                 placeholder="Tell us a bit about your team, your timeline and the outcome you'd love to see…"
-                className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all resize-none"
+                className="w-full px-4 py-3.5 rounded-xl border border-ink-100 bg-savanna-50/50 focus:bg-white focus:border-sun-400 focus:ring-4 focus:ring-sun-100 outline-none transition-all resize-none disabled:opacity-60"
               />
             </div>
 
-            <button type="submit" className="btn-primary w-full sm:w-auto">
-              {submitted ? 'Thanks — we\u2019ll be in touch' : 'Send message'}
+            {errorMessage && (
+              <p
+                role="alert"
+                className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3"
+              >
+                {errorMessage}
+              </p>
+            )}
+
+            {showSuccess && (
+              <p
+                role="status"
+                className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3"
+              >
+                Thanks — your message was sent. We&apos;ll reply within one working day.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={busy}
+              className="btn-primary w-full sm:w-auto disabled:opacity-60 disabled:pointer-events-none"
+            >
+              {busy
+                ? 'Sending…'
+                : showSuccess
+                  ? 'Message sent'
+                  : 'Send message'}
               <ArrowRight className="w-4 h-4" />
             </button>
 

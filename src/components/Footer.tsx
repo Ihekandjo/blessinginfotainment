@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 import { NAV_ITEMS, SOCIALS } from '../data/site';
 import { useScrollTo } from '../hooks/useScrollTo';
 
@@ -39,8 +40,10 @@ export function Footer() {
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-10 pt-12 border-t border-white/10">
           <div className="md:col-span-2">
-            <img src="/logo.png" alt="Blessing Infotainment" className="h-12" />
-            <p className="mt-4 text-sm leading-relaxed max-w-sm">
+            <div className="text-left">
+              <BrandLogo variant="footer" />
+            </div>
+            <p className="mt-5 text-sm leading-relaxed max-w-sm">
               Blessing Infotainment is a Namibian consultancy delivering
               training, marketing, events and software with heart.
             </p>
