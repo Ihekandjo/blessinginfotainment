@@ -100,7 +100,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 bg-savanna-50 overflow-hidden"
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
       <div
         aria-hidden

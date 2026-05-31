@@ -24,6 +24,10 @@ export function Process() {
         aria-hidden
         className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-ink-500/40 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="absolute bottom-1/4 -right-32 w-[24rem] h-[24rem] rounded-full bg-sun-400/10 blur-3xl"
+      />
 
       <div className="container-tight relative">
         <SectionHeading

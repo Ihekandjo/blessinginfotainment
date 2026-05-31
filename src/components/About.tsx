@@ -27,7 +27,7 @@ function StatCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.6, delay: index * 0.08 }}
-      className="relative rounded-2xl border border-ink-100 bg-white/60 backdrop-blur p-6 md:p-7 overflow-hidden group"
+      className="relative rounded-2xl border border-ink-100/80 bg-white shadow-soft p-6 md:p-7 overflow-hidden group hover:border-sun-200 transition-colors duration-300"
     >
       <span className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-sun-300/40 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="relative">
@@ -53,7 +53,7 @@ export function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
       <div
         aria-hidden

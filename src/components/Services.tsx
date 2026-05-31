@@ -6,10 +6,10 @@ import { SERVICES, type Service } from '../data/site';
 import { SectionHeading } from './SectionHeading';
 
 const ACCENTS: Record<Service['accent'], { ring: string; iconBg: string; iconText: string }> = {
-  sun: { ring: 'ring-sun-300/40', iconBg: 'bg-sun-100', iconText: 'text-sun-600' },
-  ink: { ring: 'ring-ink-300/40', iconBg: 'bg-ink-100', iconText: 'text-ink-700' },
-  savanna: { ring: 'ring-savanna-300/40', iconBg: 'bg-savanna-100', iconText: 'text-savanna-600' },
-  emerald: { ring: 'ring-emerald-accent/40', iconBg: 'bg-emerald-accent/15', iconText: 'text-emerald-accent' },
+  sun: { ring: 'ring-sun-400/50', iconBg: 'bg-sun-50', iconText: 'text-sun-500' },
+  ink: { ring: 'ring-ink-400/40', iconBg: 'bg-ink-900', iconText: 'text-white' },
+  savanna: { ring: 'ring-savanna-400/50', iconBg: 'bg-savanna-100', iconText: 'text-savanna-700' },
+  emerald: { ring: 'ring-emerald-accent/50', iconBg: 'bg-emerald-accent/15', iconText: 'text-emerald-accent' },
 };
 
 function ServiceCard({ service, index }: { service: Service; index: number }) {
